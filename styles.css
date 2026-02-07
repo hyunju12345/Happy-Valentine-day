@@ -1,0 +1,171 @@
+:root {
+    --bg1: #fff0f6;
+    --bg2: #f3f0ff;
+    --text: #2b2b2b;
+    --yes: #ff4d6d;
+    --no: #6c757d;
+    --card: rgba(255,255,255,0.85);
+  }
+  
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR",
+                 Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background:
+      radial-gradient(1200px 800px at 20% 20%, var(--bg1), transparent 60%),
+      radial-gradient(1200px 800px at 80% 80%, var(--bg2), transparent 60%),
+      linear-gradient(135deg, #fff, #fff);
+    color: var(--text);
+    overflow: hidden;
+  }
+  
+  .card {
+    width: min(520px, 92vw);
+    padding: 28px 22px;
+    border-radius: 22px;
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+  }
+  
+  h1 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    letter-spacing: -0.2px;
+  }
+  
+  .title-big {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+  
+  p {
+    margin: 0 0 18px;
+    opacity: 0.85;
+    line-height: 1.45;
+  }
+  
+  .submsg {
+    margin-top: 14px;
+    font-size: 15px;
+    opacity: 0.8;
+  }
+  
+  .btnRow {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    position: relative;
+    min-height: 56px; /* No가 움직일 공간 */
+  }
+  
+  .btn {
+    border: none;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .btn:active { transform: scale(0.98); }
+  
+  .btn-yes {
+    background: var(--yes);
+    color: #fff;
+    font-weight: 800;
+  }
+  
+  .btn-yes:hover { transform: translateY(-1px); }
+  
+  .btn-no {
+    background: var(--no);
+    color: #fff;
+    position: absolute; /* 도망용 */
+    left: 50%;
+    top: 0;
+    transform: translateX(80px);
+    touch-action: none;
+  }
+  
+  .actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .linkBtn {
+    width: fit-content;
+  }
+  
+  .bouquet {
+    font-size: 72px;
+    line-height: 1;
+    filter: drop-shadow(0 8px 14px rgba(0,0,0,0.12));
+    animation: pop .6s ease both;
+    margin: 6px 0 8px;
+  }
+  
+  .msg {
+    margin-top: 6px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #d6336c;
+    animation: float 1.8s ease-in-out infinite;
+  }
+  
+  .tiny {
+    margin-top: 12px;
+    font-size: 12px;
+    opacity: 0.55;
+  }
+  
+  .hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  .heart {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0.75;
+    animation: rise 2.8s ease-in forwards;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.12));
+  }
+  
+  @keyframes pop {
+    0% { transform: scale(0.6); opacity: 0; }
+    70% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  @keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: .0; }
+    15% { opacity: .85; }
+    100% { transform: translateY(-180px) scale(1.35); opacity: 0; }
+  }
+  
