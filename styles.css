@@ -19,7 +19,7 @@
     background:
       radial-gradient(1200px 800px at 20% 20%, var(--bg1), transparent 60%),
       radial-gradient(1200px 800px at 80% 80%, var(--bg2), transparent 60%),
-      linear-gradient(135deg, #fff, #fff);
+      linear-gradient(135deg, #ff6db6, #ffb6b6);
     color: var(--text);
     overflow: hidden;
   }
